@@ -1,15 +1,16 @@
 module fortium_types
-    !Fortran bindings for the nanomsg v0.4 sockets library (https://github.com/nanomsg/nanomsg)
-    !"nanomsg" is licensed under MIT/X11 license and is a trademark of 250bpm s.r.o.
+    !Fortran bindings for libsodium - a P(ortable|ackageable) NaCl-based crypto library
+    !(https://github.com/jedisct1/libsodium)
+    !"libsodium" is licensed under the ISC license (http://en.wikipedia.org/wiki/ISC_license)
     !
-    !nanofort bindings for nanomsg - MIT License (MIT)
-    !See LICENSE file for more details    
+    !fortium bindings for libsodium - MIT License (MIT)
+    !See LICENSE file for more details 
     !Copyright (c) 2014 John N. Shahbazian
-    !https://github.com/jshahbazi/nanofort
+    !https://github.com/jshahbazi/fortium
     
     use iso_c_binding
     
-
+    implicit none
     
     type, bind(c) :: crypto_hash_sha512_state
         integer(c_int64_t) :: state(8)

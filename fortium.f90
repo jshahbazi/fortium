@@ -1,13 +1,16 @@
 module fortium
-    !Fortran bindings for the nanomsg v0.4 sockets library (https://github.com/nanomsg/nanomsg)
-    !"nanomsg" is licensed under MIT/X11 license and is a trademark of 250bpm s.r.o.
+    !Fortran bindings for libsodium - a P(ortable|ackageable) NaCl-based crypto library
+    !(https://github.com/jedisct1/libsodium)
+    !"libsodium" is licensed under the ISC license (http://en.wikipedia.org/wiki/ISC_license)
     !
-    !nanofort bindings for nanomsg - MIT License (MIT)
-    !See LICENSE file for more details    
+    !fortium bindings for libsodium - MIT License (MIT)
+    !See LICENSE file for more details 
     !Copyright (c) 2014 John N. Shahbazian
-    !https://github.com/jshahbazi/nanofort
+    !https://github.com/jshahbazi/fortium
 
     use iso_c_binding 
+    
+    implicit none
     
     interface     
     
@@ -174,14 +177,6 @@ module fortium
             type(c_ptr), value :: state                !crypto_auth_hmacsha512256_state *state
             type(c_ptr), value :: out                  !unsigned char *out
         end function crypto_auth_hmacsha512256_final   
-        
-        
-      integer(c_int) function strlen(s) bind(c, name='strlen')
-        use iso_c_binding
-        implicit none
-        !----
-        type(c_ptr), intent(in), value :: s
-      end function strlen
         
         !c_memcpy - same as the C function memcpy
         type(c_ptr) function c_memcpy(dest, src, n) bind(c,name="memcpy")

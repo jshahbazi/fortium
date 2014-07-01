@@ -1,7 +1,17 @@
 module fortium_defines
+    !Fortran bindings for libsodium - a P(ortable|ackageable) NaCl-based crypto library
+    !(https://github.com/jedisct1/libsodium)
+    !"libsodium" is licensed under the ISC license (http://en.wikipedia.org/wiki/ISC_license)
+    !
+    !fortium bindings for libsodium - MIT License (MIT)
+    !See LICENSE file for more details 
+    !Copyright (c) 2014 John N. Shahbazian
+    !https://github.com/jshahbazi/fortium
+    
     use iso_c_binding
     
-    
+    implicit none
+        
     !-----------------------------
     !crypto_hash_sha512.h    
     
